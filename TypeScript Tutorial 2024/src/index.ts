@@ -126,19 +126,76 @@ let textBox: UIWidget = {
   resize: () => {},
 };
 
-
 // CONST
 const PINumber: number = 3.14;
 
 // LITERAL TYPES
 // Exact, specific
 let quantity: 50 = 50;
-let namesse: 'genesis' = "genesis";
+let namesse: "genesis" = "genesis";
 // let quantity3: 50 = 51; // Wrong!
 let quantity2: 50 | 100 = 100; // can be 50 or 100
 
 type Quantity = 50 | 100;
 let quantity5: Quantity = 50;
 
-type Metric = 'cm' | 'inch' | 'meters';
-let sizeType: Metric = 'cm';
+type Metric = "cm" | "inch" | "meters";
+let sizeType: Metric = "cm";
+
+// NULL TYPES
+function greet(name: string | null | undefined) {
+  if (name) {
+    console.log(name.toLocaleUpperCase());
+  } else {
+    console.log("Haaahhah");
+  }
+}
+
+greet(null);
+greet(undefined);
+
+type Nullable = null | undefined;
+function greet2(name: string | Nullable) {
+  if (name) {
+    console.log(name.toLocaleUpperCase());
+  } else {
+    console.log("Haaahhah");
+  }
+}
+
+greet(null);
+greet(undefined);
+
+// OPTIONAL CHAINING
+type Customer = {
+  birthday?: Date;
+};
+
+function getCustomer(id: number): Customer | Nullable {
+  return id === 0 ? null : { birthday: new Date() };
+}
+
+let customer = getCustomer(0);
+let customer2 = getCustomer(1);
+// Longer Way
+// if (customer !== null && customer !== undefined) ...
+
+// Optional Property Access Operator
+console.log(customer?.birthday);
+console.log(customer2?.birthday);
+
+console.log(customer?.birthday?.getFullYear());
+console.log(customer2?.birthday?.getFullYear());
+
+// Optional Element Access Operator
+let names: string[] | null = ["AA", "BBB", "CC"];
+const firstName = names[3]; // Bu niye uyarı basmıyor?
+
+const firstName2 = names?.[3]; // Kullan bunu
+console.log(firstName2);
+
+// Optional Call Operator
+let log: any = (message: string) => console.log(message);
+let log2: any = null;
+
+log?.();

@@ -1,4 +1,5 @@
 "use strict";
+var _a, _b;
 let sales = 123456789;
 let course = "TypeScript";
 let is_published = true;
@@ -48,11 +49,57 @@ let employee2 = {
     },
 };
 function kgToLbs(weight) {
-    if (typeof weight === 'number') {
+    if (typeof weight === "number") {
         return weight * 2.2;
     }
     return parseInt(weight) * 2.2;
 }
 kgToLbs(10);
-kgToLbs('10kg');
+kgToLbs("10kg");
+let weight;
+let textBox = {
+    drag: () => { },
+    resize: () => { },
+};
+const PINumber = 3.14;
+let quantity = 50;
+let namesse = "genesis";
+let quantity2 = 100;
+let quantity5 = 50;
+let sizeType = "cm";
+function greet(name) {
+    if (name) {
+        console.log(name.toLocaleUpperCase());
+    }
+    else {
+        console.log("Haaahhah");
+    }
+}
+greet(null);
+greet(undefined);
+function greet2(name) {
+    if (name) {
+        console.log(name.toLocaleUpperCase());
+    }
+    else {
+        console.log("Haaahhah");
+    }
+}
+greet(null);
+greet(undefined);
+function getCustomer(id) {
+    return id === 0 ? null : { birthday: new Date() };
+}
+let customer = getCustomer(0);
+let customer2 = getCustomer(1);
+console.log(customer === null || customer === void 0 ? void 0 : customer.birthday);
+console.log(customer2 === null || customer2 === void 0 ? void 0 : customer2.birthday);
+console.log((_a = customer === null || customer === void 0 ? void 0 : customer.birthday) === null || _a === void 0 ? void 0 : _a.getFullYear());
+console.log((_b = customer2 === null || customer2 === void 0 ? void 0 : customer2.birthday) === null || _b === void 0 ? void 0 : _b.getFullYear());
+let names = ["asd", "!âdsdsa", "asddsads"];
+const firstName = names === null || names === void 0 ? void 0 : names[3];
+console.log(firstName);
+let log = (message) => console.log(message);
+let log2 = null;
+log === null || log === void 0 ? void 0 : log();
 //# sourceMappingURL=index.js.map
