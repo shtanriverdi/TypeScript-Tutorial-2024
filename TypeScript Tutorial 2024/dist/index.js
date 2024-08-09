@@ -96,10 +96,10 @@ console.log(customer === null || customer === void 0 ? void 0 : customer.birthda
 console.log(customer2 === null || customer2 === void 0 ? void 0 : customer2.birthday);
 console.log((_a = customer === null || customer === void 0 ? void 0 : customer.birthday) === null || _a === void 0 ? void 0 : _a.getFullYear());
 console.log((_b = customer2 === null || customer2 === void 0 ? void 0 : customer2.birthday) === null || _b === void 0 ? void 0 : _b.getFullYear());
-let names = ["asd", "!âdsdsa", "asddsads"];
-const firstName = names === null || names === void 0 ? void 0 : names[3];
-console.log(firstName);
+let names = ["AA", "BBB", "CC"];
+const firstName = names[3];
+const firstName2 = names === null || names === void 0 ? void 0 : names[3];
+console.log(firstName2);
 let log = (message) => console.log(message);
 let log2 = null;
-log === null || log === void 0 ? void 0 : log();
 //# sourceMappingURL=index.js.map

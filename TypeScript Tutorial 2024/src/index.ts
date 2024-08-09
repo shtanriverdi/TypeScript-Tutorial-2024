@@ -198,4 +198,5 @@ console.log(firstName2);
 let log: any = (message: string) => console.log(message);
 let log2: any = null;
 
+log2();
 log?.();
